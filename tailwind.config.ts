@@ -13,7 +13,7 @@ const config: Config = {
         foreground: "#000000",
         primary: {
           DEFAULT: "#CF4A3C",
-          light: "rgba(207, 74, 60, 0.1)",
+          light: "rgba(207, 74, 60, 0.05)",
           medium: "rgba(207, 74, 60, 0.3)",
         },
         surface: {

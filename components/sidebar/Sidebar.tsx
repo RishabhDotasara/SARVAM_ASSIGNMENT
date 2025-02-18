@@ -8,10 +8,7 @@ import SidebarHeader from "./SidebarHeader";
 import SidebarFooter from "./SidebarFooter";
 import { DialogMenu } from "../DialogMenu";
 
-export default function Sidebar({
-  todayThreads,
-  yesterdayThreads,
-}: SidebarProps) {
+export default function Sidebar({ todayThreads, yesterdayThreads }: SidebarProps) {
   const Context = useContext(SidebarContext);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -32,10 +29,10 @@ export default function Sidebar({
 
       {/* Desktop Sidebar (Non-expanded) - Only visible on md and up */}
       <div className="hidden lg:flex z-20 bg-background h-screen w-[6rem] items-center fixed">
-        <div className="flex flex-col gap-8 bg-background items-center p-4 px-4 mx-auto rounded-xl shadow-sm">
+        <div className="flex flex-col gap-8 bg-surface items-center p-4 px-4 mx-auto rounded-xl shadow-sm">
           <div className="flex flex-col gap-4">
             <button
-              className="p-2.5 rounded-md hover:bg-primary/20 transition-colors duration-200 group"
+              className="p-2.5 rounded-md hover:bg-primary-light transition-colors duration-200 group"
               onClick={() => Context?.setOpen(!Context?.open)}
             >
               <SidebarOpen className="h-6 w-6 text-gray-500 group-hover:text-gray-700" />
@@ -55,20 +52,17 @@ export default function Sidebar({
               <Bell className="h-6 w-6 text-gray-500 group-hover:text-gray-700" />
             </button>
             <button className="p-2.5 rounded-md hover:bg-primary-light transition-colors duration-200 group">
-              <Square className="h-6 w-6 text-gray-500 group-hover:text-gray-700" />
-            </button>
+                <Square className="h-6 w-6 text-gray-500 group-hover:text-gray-700" />
+              </button>
+            
           </div>
         </div>
       </div>
 
       {/* Mobile Menu (Full Width) and Desktop Expanded Menu */}
-      <div
+      <div 
         className={`fixed md:absolute h-screen bg-background text-gray-700 w-full md:w-[280px] flex flex-col shadow-lg z-40
-          ${
-            isMobileMenuOpen || Context?.open
-              ? "translate-x-0"
-              : "-translate-x-full"
-          } 
+          ${isMobileMenuOpen || Context?.open ? 'translate-x-0' : '-translate-x-full'} 
           transition-transform duration-300 ease-in-out`}
       >
         <SidebarHeader onClose={handleClose} />
@@ -92,7 +86,7 @@ export default function Sidebar({
 
       {/* Overlay for mobile */}
       {(isMobileMenuOpen || Context?.open) && (
-        <div
+        <div 
           className="fixed inset-0 bg-black bg-opacity-50 z-10"
           onClick={handleClose}
         />
