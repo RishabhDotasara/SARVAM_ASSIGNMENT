@@ -1,6 +1,5 @@
 import React from "react";
 import { Bell, User } from "lucide-react";
-import { DialogMenu } from "../DialogMenu";
 import Avatar from "./Avatar";
 
 const userOptions = [
