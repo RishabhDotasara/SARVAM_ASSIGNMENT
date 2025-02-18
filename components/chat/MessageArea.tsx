@@ -140,7 +140,7 @@ export default function MessageArea() {
       {/* File Viewer */}
       {selectedFile && (
         <div className="hidden lg:flex flex-shrink-0 w-[600px] border-l border-gray-50/10 overflow-y-auto scrollbar-hide">
-          <Fileviewer file={{name:"Sebi rules and guidelines", url:"https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdfj"}}/>
+          <Fileviewer file={{name:"Sebi rules and guidelines", url:"https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf"}}/>
         </div>
       )}
     </div>

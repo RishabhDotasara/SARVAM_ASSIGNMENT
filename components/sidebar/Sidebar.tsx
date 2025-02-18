@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import { SidebarContext } from "./SidebarProvider";
-import { Bell, Menu, Plus, SidebarOpen, Square, User } from "lucide-react";
+import { Bell, Menu, Plus, SidebarOpen, Square, User, User2 } from "lucide-react";
 import Separator from "../Separator";
 import type { SidebarProps } from "./types";
 import ThreadSection from "./ThreadSection";
 import SidebarHeader from "./SidebarHeader";
 import SidebarFooter from "./SidebarFooter";
-import { DialogMenu } from "../DialogMenu";
+import Avatar from "./Avatar";
 
 export default function Sidebar({ todayThreads, yesterdayThreads }: SidebarProps) {
   const Context = useContext(SidebarContext);
@@ -51,9 +51,12 @@ export default function Sidebar({ todayThreads, yesterdayThreads }: SidebarProps
               </span>
               <Bell className="h-6 w-6 text-gray-500 group-hover:text-gray-700" />
             </button>
-            <button className="p-2.5 rounded-md hover:bg-primary-light transition-colors duration-200 group">
-                <Square className="h-6 w-6 text-gray-500 group-hover:text-gray-700" />
-              </button>
+      
+            <Avatar
+              imageURL="https://plus.unsplash.com/premium_photo-1737659254845-d52fe134d589?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              onClick={()=>{}}
+            />
+        
             
           </div>
         </div>
@@ -71,7 +74,7 @@ export default function Sidebar({ todayThreads, yesterdayThreads }: SidebarProps
         <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
           <div className="p-4 space-y-6">
             {/* ADD THREAD BUTTON */}
-            <button className="flex items-center gap-2 bg-background text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-background/80 transition-colors duration-200 outline-2 justify-between w-full">
+            <button className="flex items-center gap-2 bg-surface text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-surface/80 transition-colors duration-200 outline-2 justify-between w-full">
               Add New Thread
               <Plus className="h-5 w-5" />
             </button>
